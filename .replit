@@ -1,0 +1,15 @@
+run = "gunicorn --bind 0.0.0.0:5000 main:app"
+modules = ["web", "python-3.11"]
+
+hidden = [".pythonlibs"]
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "gunicorn --bind 0.0.0.0:5000 main:app"]
+deploymentTarget = "cloudrun"
+
+[[ports]]
+localPort = 5000
+externalPort = 80

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+      <!-- Content -->
+<div class="container" >
+    <h2 style="text-align: center; margin-top: 32px; margin-bottom: 18px;">Working for us</h2>
+    <div class="row" style="margin-bottom:16px">
+        <div class="col-md-6">
+          <p class="lead" style="text-align: center; margin-top: 32px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et urna eu eros sollicitudin molestie et vitae felis. Nulla arcu turpis, tristique non velit at, vestibulum tempor mauris. Mauris porttitor diam et auctor eleifend. Curabitur porttitor elit neque, ac porttitor nunc sagittis sed. Pellentesque quis purus justo. In egestas libero.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et urna eu eros sollicitudin molestie et vitae felis. Nulla arcu turpis, tristique non velit at, vestibulum tempor mauris. Mauris porttitor diam et auctor eleifend. Curabitur porttitor elit neque, ac porttitor nunc sagittis sed. Pellentesque quis purus justo. In egestas libero.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="col-md-6">
+            <img class="img-fluid rounded" src="static/people.jpg"  alt="People working together">
+          </div>
+    </div>  
+  </div>
+    <div class="container">
+      <h2>Open Positions</h2>
+      <div>
+        {% for job in jobs %}
+        {%include 'jobitem.html' %}
+        {% endfor%}
+      </div>
+      
+      <br>
+        <div style="text-align:center;">
+      <a href="" type="button" class="btn btn-primary btn-lg">Contact Us</a>
+        </div>   
+    </div>
+      <!-- Content -->
+ {% endblock %}

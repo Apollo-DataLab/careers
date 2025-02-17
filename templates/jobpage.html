@@ -1,0 +1,29 @@
+
+{%extends 'base.html'%}
+
+{%block content%}
+<div class= "container">
+  <h2 style="text-align: center; margin-top: 32px; margin-bottom: 18px;">Working for us</h2>
+  <h3>Title</h3>
+  <p>{{job[0]['title']}}</p>
+  <h3>Location</h3>
+  <p>{{job[0]['location']}}</p>
+  <h3>Salary</h3>
+  <p>{{job[0]['currency']}}{{job[0]['salary']}}</p>
+  <h3>Responsibilities</h3>
+  <ul>
+  {%for line in job[0]['responsibilities'].split(".")%}
+  <li>{{line}}</li>
+  {%endfor%}
+  </ul>
+  <h3>Requirements</h3>
+  <ol>
+    {%for line in job[0]['requirements'].split(".")%}
+    <li>{{line}}</li>
+    {%endfor%}
+    </ol>
+  {%include 'application_form.html'%}
+</div>
+{%endblock%}
+
+  
